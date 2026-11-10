@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minas antipersonal: una amenaza que permanece en el territorio</title>
+<meta name="description" content="Las modalidades de violencia: una violencia frecuente y de baja intensidad. Minas antipersonal en el conflicto armado colombiano.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚠️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --suelo:#1d2a20;
+  --suelo-2:#27382b;
+  --musgo:#6f8a5b;
+  --hueso:#e9ece4;
+  --tinta:#18211b;
+  --alerta:#f2c230;
+  --barro:#b5532f;
+  --display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;
+  --texto:"Newsreader",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);font-size:1.2rem;line-height:1.65;color:var(--tinta);background:var(--hueso)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--alerta);outline-offset:3px}
+.wrap{width:min(1080px,92%);margin-inline:auto}
+
+/* HERO */
+.hero{position:relative;background:var(--suelo);color:var(--hueso);overflow:hidden;padding:clamp(3rem,9vw,7rem) 0 0}
+.hero svg.topo{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.hero .wrap{position:relative}
+.hero .tema{font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--alerta);margin-bottom:1.2rem}
+.hero h1{font-weight:800;font-size:clamp(2.6rem,8.5vw,6.4rem);max-width:15ch}
+.hero h1 span{display:block;color:var(--alerta)}
+.hero p.sub{max-width:44ch;margin-top:1.6rem;font-size:1.3rem;color:#cfd8c9}
+.hero .nota{margin-top:2rem;font-family:var(--display);font-size:1rem;color:#9fb092}
+.cinta{margin-top:clamp(3rem,7vw,5rem);height:46px;background:repeating-linear-gradient(-45deg,var(--alerta) 0 26px,var(--tinta) 26px 52px);position:relative}
+
+/* SECCIONES */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1.5rem;max-width:20ch}
+.intro{max-width:62ch}
+.intro p+p{margin-top:1rem}
+
+/* RESPONSABLES */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem}
+.actor{background:var(--suelo);color:var(--hueso);padding:2rem;border-radius:4px 28px 4px 28px}
+.actor h3{font-size:2.4rem;color:var(--alerta)}
+.actor .cuando{font-family:var(--display);font-weight:500;margin:.3rem 0 .8rem;color:#b9c8ae}
+.actor p{font-size:1.05rem;color:#d4ddce}
+.uso{margin-top:2rem;max-width:62ch;border-left:6px solid var(--barro);padding-left:1.2rem;font-style:italic}
+
+/* CIFRAS */
+.cifras{background:var(--suelo);color:var(--hueso);position:relative;overflow:hidden}
+.cifras h2{color:var(--hueso)}
+.total{font-family:var(--display);font-weight:800;font-size:clamp(4.5rem,17vw,11rem);line-height:.9;letter-spacing:-.04em;color:var(--alerta)}
+.total small{display:block;font-size:1.3rem;font-weight:500;letter-spacing:0;color:#cfd8c9;margin-top:.8rem}
+.campo{display:grid;grid-template-columns:minmax(260px,1fr) 1fr;gap:3rem;align-items:center;margin-top:3rem}
+.puntos{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(.4rem,1.4vw,.8rem);max-width:460px}
+.puntos i{aspect-ratio:1;border-radius:50%;background:var(--musgo);opacity:.9}
+.puntos i.civil{background:var(--hueso)}
+.puntos i.menor{background:var(--alerta);box-shadow:0 0 0 3px rgba(242,194,48,.25)}
+.leyenda{list-style:none;display:grid;gap:1.4rem}
+.leyenda li{display:grid;grid-template-columns:22px 1fr;gap:.9rem;align-items:start}
+.leyenda b{font-family:var(--display);font-size:2rem;display:block;line-height:1}
+.leyenda span.c{width:22px;height:22px;border-radius:50%;margin-top:.35rem}
+.leyenda p{font-size:1.05rem;color:#cfd8c9;margin-top:.2rem}
+.cifras .pie{margin-top:2.5rem;font-size:1rem;color:#9fb092}
+@media (prefers-reduced-motion:no-preference){
+  .puntos i{animation:brota .5s both}
+  @keyframes brota{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:.9}}
+}
+
+/* CONSECUENCIAS */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:2.5rem}
+.caso{background:#fff;padding:1.6rem;border-top:8px solid var(--suelo)}
+.caso:nth-child(2){border-color:var(--musgo)}
+.caso:nth-child(3){border-color:var(--alerta)}
+.caso:nth-child(4){border-color:var(--barro)}
+.caso svg{width:44px;height:44px;margin-bottom:.8rem}
+.caso h3{font-size:1.5rem;margin-bottom:.5rem}
+.caso p{font-size:1.05rem}
+
+/* OBJETIVO */
+.objetivo{background:var(--alerta)}
+.objetivo .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem}
+.objetivo h2{max-width:14ch}
+.verbo h3{font-size:1.9rem;margin-bottom:.3rem}
+.verbo+.verbo{margin-top:1.6rem}
+.verbo p{font-size:1.1rem}
+
+/* CONCLUSION */
+.conclusion{text-align:center}
+.conclusion blockquote{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.6vw,3.2rem);line-height:1.12;letter-spacing:-.02em;max-width:22ch;margin:0 auto 1.8rem}
+.conclusion p{max-width:60ch;margin-inline:auto}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:2.5rem;list-style:none}
+.chips li{font-family:var(--display);font-weight:500;font-size:1rem;padding:.45rem 1rem;border:2px solid var(--suelo);border-radius:999px}
+
+/* PIE */
+footer{background:var(--suelo);color:#cfd8c9;padding:3rem 0;font-size:1rem}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem}
+footer h3{font-size:1.2rem;color:var(--alerta);margin-bottom:.6rem}
+footer ul{list-style:none}
+
+@media (max-width:760px){
+  body{font-size:1.1rem}
+  .duo,.campo,.objetivo .wrap,footer .wrap{grid-template-columns:1fr}
+  .campo{gap:2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="topo" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#6f8a5b" stroke-width="1.2">
+    <ellipse cx="620" cy="260" rx="60" ry="38"/><ellipse cx="620" cy="260" rx="110" ry="72"/>
+    <ellipse cx="620" cy="260" rx="165" ry="108"/><ellipse cx="620" cy="260" rx="225" ry="146"/>
+    <ellipse cx="620" cy="260" rx="290" ry="188"/><ellipse cx="620" cy="260" rx="360" ry="232"/>
+    <ellipse cx="620" cy="260" rx="435" ry="280"/><ellipse cx="620" cy="260" rx="515" ry="330"/>
+  </svg>
+  <div class="wrap">
+    <p class="tema">Las modalidades de violencia: una violencia frecuente y de baja intensidad</p>
+    <h1>Minas antipersonal<span>una amenaza que permanece en el territorio</span></h1>
+    <p class="sub">Armas que se instalaron durante el conflicto armado colombiano y que siguieron esperando mucho después de los enfrentamientos.</p>
+    <p class="nota">Tema: minas antipersonal · Informe ¡Basta Ya!</p>
+  </div>
+  <div class="cinta" aria-hidden="true"></div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Un peligro que permanece oculto</h2>
+    <div class="intro">
+      <p>Las minas antipersonal fueron una de las modalidades de violencia utilizadas durante el conflicto armado colombiano. Se instalaron en diferentes territorios y representaron un peligro permanente, porque podían permanecer ocultas durante muchos años y afectar a las personas que transitaban por esos lugares.</p>
+      <p>Fueron empleadas como estrategia militar y para controlar territorios, pero su uso afectó gravemente a la población civil, además de a los integrantes de la Fuerza Pública.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>¿Quiénes las utilizaron?</h2>
+    <p class="intro">Según el informe ¡Basta Ya!, las guerrillas utilizaron minas antipersonal durante el conflicto armado colombiano.</p>
+    <div class="duo">
+      <article class="actor">
+        <h3>ELN</h3>
+        <p class="cuando">Desde los años noventa</p>
+        <p>El Ejército de Liberación Nacional recurrió a esta práctica desde los años noventa.</p>
+      </article>
+      <article class="actor">
+        <h3>FARC</h3>
+        <p class="cuando">Desde el año 2000</p>
+        <p>Las Fuerzas Armadas Revolucionarias de Colombia intensificaron su uso a partir del año 2000.</p>
+      </article>
+    </div>
+    <p class="uso">Su utilización afectó gravemente a la población civil, además de a los integrantes de la Fuerza Pública.</p>
+  </div>
+</section>
+
+<section class="cifras">
+  <div class="wrap">
+    <h2>Las cifras detrás de cada paso</h2>
+    <p class="total">10.189<small>víctimas de minas antipersonal en Colombia entre 1982 y 2012</small></p>
+    <div class="campo">
+      <div class="puntos" id="puntos" role="img" aria-label="Cien puntos que representan las víctimas: 62 de la Fuerza Pública, 28 civiles adultos y 10 niños, niñas y adolescentes."></div>
+      <ul class="leyenda">
+        <li><span class="c" style="background:var(--musgo)"></span><div><b>6.304</b><p>integrantes de la Fuerza Pública</p></div></li>
+        <li><span class="c" style="background:var(--hueso)"></span><div><b>3.885</b><p>víctimas civiles</p></div></li>
+        <li><span class="c" style="background:var(--alerta)"></span><div><b>995</b><p>niños, niñas y adolescentes, dentro de las víctimas civiles. Esta violencia también afectó a menores de edad.</p></div></li>
+      </ul>
+    </div>
+    <p class="pie">Cada punto representa cerca de 100 víctimas. Fuente: Centro Nacional de Memoria Histórica.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Las consecuencias</h2>
+    <p class="intro">Esta violencia no solo afectó a las víctimas directas, sino también a sus familias y comunidades.</p>
+    <div class="rejilla">
+      <article class="caso">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#18211b" stroke-width="3" stroke-linecap="round"><path d="M24 6v22M24 36v2"/><circle cx="24" cy="24" r="20"/></svg>
+        <h3>Físicas</h3>
+        <p>Muchas personas murieron o sufrieron lesiones que cambiaron su vida.</p>
+      </article>
+      <article class="caso">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#18211b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40S6 29 6 17a9 9 0 0 1 18-2 9 9 0 0 1 18 2c0 12-18 23-18 23z"/></svg>
+        <h3>Psicológicas</h3>
+        <p>Otras personas tuvieron afectaciones psicológicas que marcaron su vida.</p>
+      </article>
+      <article class="caso">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#18211b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42V20l18-12 18 12v22zM18 42V28h12v14"/></svg>
+        <h3>Familiares y sociales</h3>
+        <p>Dificultaron las actividades cotidianas de las comunidades y afectaron a sus familias.</p>
+      </article>
+      <article class="caso">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#18211b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24h30M26 14l10 10-10 10M42 8v32"/></svg>
+        <h3>Confinamiento y desplazamiento</h3>
+        <p>Limitaron el tránsito por los territorios y provocaron confinamiento y desplazamiento forzado.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="objetivo">
+  <div class="wrap">
+    <div>
+      <h2>¿Por qué presentamos esta experiencia?</h2>
+      <p>Para dar a conocer la problemática de las minas antipersonal en Colombia y comprender cómo afectaron a miles de personas durante el conflicto armado. También buscamos reflexionar sobre las consecuencias de esta violencia en las víctimas, sus familias y las comunidades.</p>
+    </div>
+    <div>
+      <p style="font-size:1.1rem;margin-bottom:1.6rem"><strong>Objetivo general:</strong> visibilizar las consecuencias del uso de minas antipersonal durante el conflicto armado colombiano y concientizar sobre la importancia de proteger la vida, respetar los derechos humanos y construir una sociedad en paz.</p>
+      <div class="verbo">
+        <h3>Visibilizar</h3>
+        <p>Dar a conocer las consecuencias físicas, psicológicas, familiares y sociales que sufrieron las víctimas, especialmente los niños, niñas, adolescentes y habitantes de las zonas rurales.</p>
+      </div>
+      <div class="verbo">
+        <h3>Concientizar</h3>
+        <p>Generar reflexión sobre el daño que causa el conflicto armado y la necesidad de evitar que más personas sean víctimas de esta violencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="conclusion">
+  <div class="wrap">
+    <blockquote>La paz es fundamental para vivir sin miedo.</blockquote>
+    <p>Las minas antipersonal dejaron profundas consecuencias en Colombia y cambiaron la vida de miles de personas. Sus efectos no terminaron con los enfrentamientos, pues estas armas continuaron representando un peligro para las comunidades. Conocer esta realidad nos permite reconocer el sufrimiento de las víctimas, valorar la vida y comprender que la paz es fundamental para que todas las personas puedan vivir sin miedo.</p>
+    <ul class="chips">
+      <li>Minas antipersonal</li><li>Conflicto armado</li><li>Víctimas</li>
+      <li>Desplazamiento forzado</li><li>Población civil</li><li>Derechos humanos</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>Fuente bibliográfica</h3>
+      <p>Centro Nacional de Memoria Histórica. <em>¡Basta Ya! Colombia: memorias de guerra y dignidad.</em> Apartado 1.4.11, “Minas antipersonal, munición sin explotar y artefactos explosivos improvisados: en casa no se puede saber qué se pisa”, páginas 92-95.</p>
+    </div>
+    <div>
+      <h3>Integrantes</h3>
+      <ul>
+        <li>María José Giraldo</li><li>Isabella Arenas</li><li>Sheyla Tirado</li>
+        <li>Dana Gómez</li><li>Roxelys Bravo</li><li>Laura Ramírez</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('puntos');
+  if(!c) return;
+  var html='';
+  for(var i=0;i<100;i++){
+    var cls = i<62 ? '' : (i<90 ? 'civil' : 'menor');
+    html+='<i class="'+cls+'" style="animation-delay:'+(i*12)+'ms"></i>';
+  }
+  c.innerHTML=html;
+})();
+</script>
+</body>
+</html>
